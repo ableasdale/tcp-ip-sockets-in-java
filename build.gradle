@@ -1,5 +1,24 @@
 plugins {
     id 'java'
+    id 'application'
+}
+
+application {
+    mainClass = 'InetAddressExample'
+}
+
+/* task inetAddressExample(type: JavaExec) {
+    mainClassName = "InetAddressExample"
+} */
+
+task inetaddress (type: JavaExec) {
+    main = "InetAddressExample"
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task tcpecho (type: JavaExec) {
+    main = "TCPEchoClient"
+    classpath = sourceSets.main.runtimeClasspath
 }
 
 group = 'org.example'
@@ -13,6 +32,7 @@ dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.5.6'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.13'
 }
 
 test {

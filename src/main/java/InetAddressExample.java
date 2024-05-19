@@ -7,6 +7,8 @@ import java.net.UnknownHostException;
 
 /**
  * From Chapter 2: Basic Sockets - pp. 9-10
+ *
+ * Usage: java InetAddressExample 192.168.1.1
  */
 public class InetAddressExample {
 
