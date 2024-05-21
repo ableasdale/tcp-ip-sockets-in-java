@@ -1,15 +1,6 @@
 plugins {
     id 'java'
-    id 'application'
 }
-
-application {
-    mainClass = 'InetAddressExample'
-}
-
-/* task inetAddressExample(type: JavaExec) {
-    mainClassName = "InetAddressExample"
-} */
 
 task inetaddress (type: JavaExec) {
     main = "InetAddressExample"
@@ -18,6 +9,11 @@ task inetaddress (type: JavaExec) {
 
 task tcpecho (type: JavaExec) {
     main = "TCPEchoClient"
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task tcpechoserver (type: JavaExec) {
+    main = "TCPEchoServer"
     classpath = sourceSets.main.runtimeClasspath
 }
 

@@ -17,7 +17,7 @@ gradle inetaddress --args="www.google.com"
 
 ## TCPEchoClient
 
-Demonstrating a basic TCP echo client using a TCP Socket connection (on port 7 unless specified).
+Demonstrating a basic TCP echo client using a TCP `Socket` connection (on port 7 unless specified).
 
 In order for this to work, the client needs to connect to a server; you can do this easily by running the following in a terminal window:
 
@@ -43,6 +43,21 @@ To run the example:
 gradle tcpecho --args="localhost hello"
 ```
 
+## TCPEchoServer
+
+Demonstrating a basic TCP echo Server using a TCP `ServerSocket` connection
+
+To run the Server (on TCP Port 7)
+
+```bash
+gradle tcpechoserver --args="7"
+```
+
+To test with a client, run this in a new terminal tab/window:
+
+```bash
+echo hello | netcat localhost 7
+```
 
 ## Troubleshooting
 
